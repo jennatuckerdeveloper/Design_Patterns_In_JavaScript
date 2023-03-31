@@ -19,3 +19,6 @@ Yes, I think so.
 So in JavaScript, you call the super.
 I think that is the constructor of the parent.
 
+Allen Holub hates getters and setters.  Mosh does not. 
+The internet hates Singletons.  Allen Holub does not.  Tozny 1.0 used these in Scala.
+
