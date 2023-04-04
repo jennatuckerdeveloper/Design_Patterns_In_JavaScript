@@ -90,4 +90,5 @@ console.log(myArr1)
   And his Universe uses Cell to type the prototypes and copies object instances. 
 
   But how does this translate to JS, which is a prototypical language? 
-*/ 
+*/
+
