@@ -22,3 +22,6 @@ I think that is the constructor of the parent.
 Allen Holub hates getters and setters.  Mosh does not. 
 The internet hates Singletons.  Allen Holub does not.  Tozny 1.0 used these in Scala.
 
+---
+
+I'd like to study file systems more and see if I can see the composite pattern in them. 

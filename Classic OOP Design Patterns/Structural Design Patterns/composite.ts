@@ -1,6 +1,8 @@
 /* 
-  Use case would be a tree structure with leaf nodes and then 
-	also non-leaf nodes that lead to other nodes.  
+  Use case would be a tree structure with leaf nodes and then also 
+	non-leaf nodes that lead to either leaf nodes or ones of their same type. 
+	You can think of the non-leaf nodes as aggregates:  They're made up
+	of other things / contain other things. 
 
 	Pattern fits a hierarchy where you want to treat things the same. 
   So like, folder that has files or folders, a concept of subfolders.
@@ -15,6 +17,10 @@
   The Neighborhoods can be made of up Neighborhoods or cells.  
   So there is the leaf, that's the Resident. 
   And then there's the Neighborhood, that's the composite object. 
+
+	He shows the prototype pattern in the context of the composite pattern.
+	And says that composite pattern is the basis for several other patterns.
+
 
 */
 
