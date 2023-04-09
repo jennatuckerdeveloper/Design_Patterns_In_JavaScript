@@ -21,7 +21,6 @@
 	He shows the prototype pattern in the context of the composite pattern.
 	And says that composite pattern is the basis for several other patterns.
 
-
 */
 
 interface Groupable {

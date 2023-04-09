@@ -1,3 +1,7 @@
+22 Gang of 4 Patterns and 1 extra from Allen Holub
+
+5 done -> 
+
 I think that one of the core concepts in OOP in Java is coding abstract methods and classes.
 I think that Luke did something like this... I bet I could recreate that still.
 So you create an abstract class with an abstract method.
@@ -19,9 +23,9 @@ Yes, I think so.
 So in JavaScript, you call the super.
 I think that is the constructor of the parent.
 
-Allen Holub hates getters and setters.  Mosh does not. 
-The internet hates Singletons.  Allen Holub does not.  Tozny 1.0 used these in Scala.
+Allen Holub hates getters and setters. Mosh does not.
+The internet hates Singletons. Allen Holub does not. Tozny 1.0 used these in Scala.
 
 ---
 
-I'd like to study file systems more and see if I can see the composite pattern in them. 
+I'd like to study file systems more and see if I can see the composite pattern in them.
