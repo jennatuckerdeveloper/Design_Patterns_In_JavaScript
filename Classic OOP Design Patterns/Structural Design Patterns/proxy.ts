@@ -54,93 +54,11 @@
   "A database is nothing but a collection of tables."
 
   Mosh uses a lazy initialization example for an ebook library. 
-*/
-
-// interface Ebook {
-// 	displayTitle: () => string
-// 	open: () => string[]
-// }
-
-// class RealEbook implements Ebook {
-// 	title: string
-// 	data: string[]
-// 	constructor(title) {
-// 		this.title = title
-// 		this.data = [`${title}DATA`]
-// 	}
-// 	open() {
-// 		return this.data
-// 	}
-// }
-
-// // The proxy
-// class EbookProxy implements Ebook {
-// 	title: string
-// 	openFirst() {
-// 		if (!this.realEbook) {
-// 			new RealEbook()
-// 		}
-// 	}
-// }
-
-// class EbookLibrary {
-// 	allEbooks: Ebook[]
-// 	constructor() {
-// 		this.allEbooks = []
-// 	}
-// 	add(ebook) {
-// 		this.allEbooks.push(ebook)
-// 	}
-// 	displayTitles() {
-// 		return this.allEbooks.map((e) => e.title)
-// 	}
-// 	openFirst() {
-// 		return this.allEbooks[0].data
-// 	}
-// }
-
-// If we use just these two classes, we pass the data around too much.
-
-// const myEbookLibrary = new EbookLibrary()
-// const myBook1 = new Ebook('aaaaaa')
-// const myBook2 = new Ebook('bbbbbb')
-// const myBook3 = new Ebook('cccccc')
-// myEbookLibrary.add(myBook1)
-// myEbookLibrary.add(myBook2)
-// myEbookLibrary.add(myBook3)
-// console.log(myEbookLibrary.displayTitles())
-// console.log(myEbookLibrary.openFirst())
-
-/*
+  But I think his version always keeps the proxy around.  
+  I don't see an obvious way to get out of duplicating information.  
 
   I do not want all the Proxy hanging around in memory if the full book has needed to be loaded. 
-  There is duplicate info in there. 
-  How do I re-use the info from the cache? 
-
-  loadEhookLibrary = fetch all the data for the ebook proxies only 
-
-  EbookLoader parent extends interface Ebook (can be proxy or full)
-  this.ebook = new EbookProxy()
-  // cached proxy data gets re-used 
-  // the file contents get loaded 
-  // why do i need duplicate values?  
-  // Why not ebook meta and ebook contents? 
-  loadFullEbook = this.ebook = new FullEbook(this.ebook) // this is just wrong.  why make it copy? 
-  when open() gets called 
-  call the loadFullEbook on the super 
-
-  I want the proxy to be used until the full is used.
-  Then I want only the full to be used. 
-  But how would I get an object to replace the reference to itself with a reference to another object? 
-  I don't think that's really possible... 
-
-  I guess the constructor of the FullEbook could just take an ebook proxy. 
-
-  I think I can make this work... but it doesn't seem right to me tbh. 
-  Why would the lightweight object not just become a property of the heavier object? 
-  Why copy everything over? 
-  What is this pattern actually for?? 
-
+  Let me see if I can do this in a way that feels like it could let the proxy go when full loads. 
 */
 
 interface EbookI {
